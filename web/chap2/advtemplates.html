@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css"
+			href="../js/extjs/resources/css/ext-all.css" />
+		<script type="text/javascript" src="../js/extjs/adapter/ext/ext-base.js">
+		</script>
+		<script type="text/javascript" src="../js/extjs/ext-all-debug.js">
+		</script>
+</head>
+<body>
+
+<script type="text/javascript">
+    var tplData = [{ // 1
+    color : "#FFE9E9",
+    name : 'Naomi White',
+    age : 25,
+    dob : '03/17/84',
+    cars : ['Jetta', 'Camry', 'S2000']
+    },{
+    color : "#E9E9FF",
+    name : 'John Smith',
+    age : 20,
+    dob : '10/20/89',
+    cars : ['Civic', 'Accord', 'Camry']
+    }];
+    var myTpl = new Ext.XTemplate( // 2
+    '<tpl for=".">', // 3
+    '<div style="background-color: {color}; margin: 10px;">',
+    '<b> Name :</b> {name}<br />',
+    '<b> Age :</b> {age}<br />',
+    '<b> DOB :</b> {dob}<br />',
+    '</div>',
+    '</tpl>'
+    );
+    myTpl.compile();
+    myTpl.append(document.body, tplData);
+</script>
+
+</body>
+</html>

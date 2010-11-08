@@ -1,0 +1,13 @@
+<div>
+	Hello from the <b>world</b> of Ajax!
+</div>
+
+<script type="text/javascript" charset="utf-8">
+	function highlightWindow(){
+		var win = Ext.getCmp('myWindow');
+		var winBody = win.body;
+		winBody.highlight();
+	}
+	
+	highlightWindow.defer(1000);
+</script>
