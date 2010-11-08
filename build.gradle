@@ -1,0 +1,17 @@
+apply plugin: 'war'
+apply plugin: 'idea'
+apply plugin: 'jetty'
+
+version =
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {	
+}
+
+task init << {
+	sourceSets.all*.java.srcDirs*.each { it.mkdirs() }
+    sourceSets.all*.resources.srcDirs*.each { it.mkdirs() }
+}
