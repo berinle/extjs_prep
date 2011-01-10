@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css"
+			href="../js/extjs/resources/css/ext-all.css" />
+		<script type="text/javascript" src="../js/extjs/adapter/ext/ext-base.js">
+		</script>
+		<script type="text/javascript" src="../js/extjs/ext-all-debug.js">
+		</script>
+</head>
+<body>
+    <div id="myDiv">
+        some text here
+        <a href="#" id="myHref">My Href</a>
+    </div>
+
+<script type="text/javascript">
+    Ext.get('myDiv').on('click', function(eventObj, elRef) {
+     console.log('myDiv click handler, source elem id: ' + elRef.id);
+    });
+
+    Ext.get('myHref').on('click', function(eventObj, elRef) {
+        eventObj.stopEvent();
+     console.log('myHref click handler, source elem id: ' + elRef.id);
+    });
+</script>
+
+</body>
+</html>
