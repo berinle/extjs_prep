@@ -21,13 +21,35 @@
                 frame: true
             };
 
+            //create a data store
+            var grid1Store = new Ext.ArrayStore ({
+                data: [
+                        ['column 1'], ['column 2'], ['column 3'], ['column 4']
+                ],
+                fields: ['name']
+
+            });
+
+            //
+            var grid1Combo = {
+                xtype: 'combo',
+                fieldLabel: 'Default sort for grid 1',
+                store: grid1Store,
+                displayField: 'name',
+                typeAhead: true,
+                mode: 'local'
+            }
+
+
+
             var win = new Ext.Window({
                 id : "mywin",
                 height: 400,
                 width: 400,
                 items: [
-                        panel1,
-                        panel2
+                        //panel1,
+                        //panel2,
+                        grid1Combo
                 ]
                 
             });
