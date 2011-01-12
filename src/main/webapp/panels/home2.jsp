@@ -36,7 +36,8 @@
                         mode: 'local',
                         name: 'name',
                         displayField: 'name',
-                        valueField: 'name'
+                        valueField: 'name',
+                        editable: false
 
                     },
                     //radio button
@@ -88,7 +89,8 @@
                         mode: 'local',
                         name: 'name',
                         displayField: 'name',
-                        valueField: 'name'
+                        valueField: 'name',
+                        editable: false
 
                     },
                     //radio button
