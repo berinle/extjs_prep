@@ -1,8 +1,13 @@
+// http://docs.codehaus.org/display/GRADLE/Gradle+Jetty+Plugin
+//http://kb.plweb.org/webtestingconcepts
+
 apply plugin: 'war'
 apply plugin: 'idea'
 apply plugin: 'jetty'
 
-version =
+defaultTasks 'jettyRun'
+
+version = 1.0
 
 repositories {
 	mavenCentral()
@@ -14,4 +19,11 @@ dependencies {
 task init << {
 	sourceSets.all*.java.srcDirs*.each { it.mkdirs() }
     sourceSets.all*.resources.srcDirs*.each { it.mkdirs() }
+}
+
+jettyRun.scanIntervalSeconds=5
+
+jettyRun {
+	httpPort = 7070	
+	//scanIntervalSeconds = 5
 }

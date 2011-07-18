@@ -37,7 +37,9 @@ var store = new Ext.data.ArrayStore({
     data: mockData,
     fields: ['name', 'type' ]
 });
-    //store.setDefaultSort('name', 'DESC');
+    store.setDefaultSort('type', 'DESC');
+    store.loadData(mockData);
+
     //store.reload();
 var columnModel = new Ext.grid.ColumnModel([
         { header: 'name', width: 100, dataIndex: 'name', sortable:true, id: 'name' },
@@ -60,7 +62,8 @@ Ext.onReady(function(){
 
     });
 
-    Ext.util.Observable.capture(Ext.getCmp('mygrid'), console.info);
+    Ext.util.Observable.capture(grid, console.info);
+    //Ext.util.Observable.capture(store, console.info);
 
 
     /*handleSortChange: function(grid, sortInfo){
@@ -102,12 +105,12 @@ Ext.onReady(function(){
         });
     });
 
-    grid.on('viewready', function(g) {
+
+    /*grid.on('viewready', function(g) {
         g.getStore().setDefaultSort('name', 'DESC');
         g.getStore().loadData(mockData); //trigger reload with the default sort order
         //g.getStore().reload(); would cause a 'this.proxy is undefined' error for local mode, use loadData instead
-        //g.getStore().loadData(store.data); //trigger reload with the default sort order
-    });
+    });*/
 
 
 
