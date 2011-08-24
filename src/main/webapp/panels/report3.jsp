@@ -19,32 +19,27 @@
 
     <style type="text/css">
 
-        #reportRow {
-            /*border: 1px solid #999999;*/
-            border-bottom: 1px solid;
-            border-bottom-color: #999999;
-            padding: 5px 5px 5px 5px;
-        }
-
-        #reportRow .row {
+        .row {
             border: 1px #999999 solid;
             margin: 3px;
             -moz-border-radius: 5px;
             -webkit-border-radius: 5px;
-            background-color: #ffffcc;
+            /*background-color: #ffffcc;*/
             padding-bottom: 3px;
         }
 
-        #reportRow .rowHeader {
+        .rowHeader {
             font-weight: bold;
             font-size: larger;
+            padding-left: 5px;
         }
 
-        #reportRow .rowDesc {
+        .rowDesc {
             padding-left: 15px;
+            display: block;
         }
 
-        .highlight {
+        .row:hover {
             background-color: ivory;
         }
     </style>
@@ -83,31 +78,47 @@
 
             var tpl = new Ext.XTemplate(
                     '<tpl for=".">',
-                    '<div class="row" id="reportRow">',
-                    '<div class="rowHeader">{title}</div>',
+                    '<div class="row">',
+                    '<span class="rowHeader">{title}</span>',
                     '<span class="rowDesc">{description}</span></div>',
                     '</tpl>',
                     '<div class="x-clear"></div>'
             );
+
+            var dataView = new Ext.DataView({
+                store: store,
+                tpl: tpl,
+                autoHeight:true,
+                multiSelect: false,
+                overClass:'x-view-over',
+                itemSelector:'div.row',
+                emptyText: 'No images to display',
+                listeners: {
+                    click: function(thisDiv, index) {
+                        var record = thisDiv.store.getAt(index);
+                        //record.id
+                         console.log("You selected report " + record.data.title);
+                         Ext.Msg.show({
+                         title: 'Running report...',
+                         msg: "You selected report " + record.id,
+                         width: 300,
+                         buttons: Ext.Msg.OK,
+                         icon: Ext.Msg.INFO
+                         });
+                    }
+                }
+
+            });
 
             var panel = new Ext.Panel({
                 id:'bayo-view',
                 frame:true,
                 width:535,
                 autoHeight:true,
-                collapsible:true,
+                collapsible:false,
                 layout:'fit',
                 title:'Reports DataView',
-
-                items: new Ext.DataView({
-                    store: store,
-                    tpl: tpl,
-                    autoHeight:true,
-                    multiSelect: true,
-                    overClass:'x-view-over',
-                    itemSelector:'div.thumb-wrap',
-                    emptyText: 'No images to display'
-                })
+                items: dataView
             });
             panel.render(document.body);
 
