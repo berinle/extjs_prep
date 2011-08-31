@@ -21,7 +21,7 @@ Ext.onReady(function(){
     });
 
     var filterForm = new Ext.form.FormPanel({
-        title:'',
+        title:'Data Filter',
         width:600,
         renderTo:'filterSelector',
         items:[
