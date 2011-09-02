@@ -12,14 +12,13 @@
     <script type="text/javascript" src="../js/ext/examples/ux/ItemSelector.js"></script>
 
 
-    <script type="text/javascript" src="../js/samples/filter4.js"></script>
-    <script type="text/javascript" src="../js/samples/setup_filter.js"></script>
+    <script type="text/javascript" src="../js/samples/notification.js"></script>
 
 </head>
 
 <body>
 
-<div id="filter3"></div>
+<div id="notification"></div>
 
 </body>
 

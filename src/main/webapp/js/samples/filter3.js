@@ -2,6 +2,9 @@ Ext.onReady(function(){
     Ext.QuickTips.init();
     Ext.form.Field.prototype.msgTarget = 'side';
 
+    Ext.ns("com.jrock.filter");
+    var DF = com.jrock.filter;
+
     var a1 = [];
     var a2 = [];
 
@@ -37,10 +40,9 @@ Ext.onReady(function(){
             });
 
 
-            var filterForm = new Ext.form.FormPanel({
+            DF.setuppanel = Ext.extend(Ext.form.FormPanel, {
                 title:'Data Filter',
                 width:600,
-                renderTo:'filter3',
                 items:[
                     {
                         xtype:'itemselector',
@@ -82,6 +84,8 @@ Ext.onReady(function(){
                 ]
 
             });
+
+            Ext.reg('com.jrock.filter.setuppanel', DF.setuppanel);
         },
         failure: function(res){}
 
