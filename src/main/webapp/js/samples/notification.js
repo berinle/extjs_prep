@@ -17,12 +17,11 @@
             store: screenedStore,
             columns: [{header:'Screened', width:200 /*autoWidth:true*/}],
             autoHeight:true,
-            //width:400,
             border:false
         });
 
         var dummyViewableData = [
-            ['field9'],['field8','field7']
+            ['field9'],['field8']//,['field7']
         ];
 
         var viewableStore = new Ext.data.ArrayStore({
@@ -35,8 +34,6 @@
             columns: [{header:'Viewable', width:200}],
 //            height:100,
             autoHeight:true,
-            align:'top',
-//            width:400,
             border:false
 
         });
@@ -47,9 +44,12 @@
             renderTo: Ext.getBody(),
             width: '30%',
 //            autoHeight:true,
+            height:150,
             collapsible: true,
-            layout:'table',
-            layoutConfig: {columns:2},
+            layout:'hbox',
+
+            layoutConfig: {padding:'0', align:'top'},
+            defaults:{margins: '0'},
             items: [
                 screenedGrid,
                 viewableGrid
