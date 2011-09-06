@@ -14,6 +14,17 @@
 
     <script type="text/javascript" src="../js/samples/notification.js"></script>
 
+    <style type="text/css">
+        body {
+            font: 'arial 10px';
+        }
+
+        #notification {
+            display: block;
+            text-align: center;
+        }
+    </style>
+
 </head>
 
 <body>
