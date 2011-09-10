@@ -12,7 +12,7 @@
     <script type="text/javascript" src="../js/ext/examples/ux/ItemSelector.js"></script>
 
 
-    <script type="text/javascript" src="../js/samples/notification.js"></script>
+    <script type="text/javascript" src="../js/samples/notification1.js"></script>
 
     <style type="text/css">
         body {
@@ -23,6 +23,24 @@
             display: block;
             text-align: center;
         }
+
+		#sgrid .x-grid3-row, #vgrid .x-grid3-row {
+			width: 170px !important;
+		}
+		
+		#msg { 
+		    float: left;
+		    width: 350px;
+            margin-bottom: 10px;
+		}
+		#nid { 
+			float: left;
+		    margin-right: 5px;
+			margin-top: 15%;
+            padding-left: 5px;
+		    width: 15px;
+		}
+		
     </style>
 
 </head>
