@@ -1,4 +1,26 @@
 <!DOCTYPE html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>hello</title>
+	<script type="text/javascript" charset="utf-8">
+		//2011-09-06 14:31:09.000"
+		var s = "2011-09-06 14:31:09.000";
+		var y = s.split(" ");
+		var arr = y[0].split("-");
+		/*for(var i=0; i < arr.length; i++){
+			alert(arr[i]);
+		}*/
+		alert(new Date(arr[0],arr[1]-1,arr[2]));
+	</script>
+</head>
+<style>
+#me { 
+	background-image:url('../images/notification.png'); 
+	background-repeat: no-repeat;
+}
+</style>
 <body id="hello" onload="">
 	<img src="../images/notification.png" alt="notify">
+	
+	<img alt="helloworld" id="me">
 </body>
